@@ -1,0 +1,20 @@
+[package]
+name = "rust_benchmark_string_vs_smartstring"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+smartstring = "0.2.9"
+
+[profile.release]
+# With Link-Time Optimization.
+lto = true
+
+# Note: See the performance with and without link-time optimization,
+#       it's impressive what lto flag can do, without changing one single
+#       lineof code!
+#       It will take a little longer to compile in the release build,
+#       but that's all.
+#       Nice :-) 
