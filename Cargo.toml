@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 smartstring = "0.2.9"
+smallstring = "0.1.2"
+smallstr = "0.2.0"
 
 [profile.release]
 # With Link-Time Optimization.
@@ -18,3 +20,10 @@ lto = true
 #       It will take a little longer to compile in the release build,
 #       but that's all.
 #       Nice :-) 
+
+# rustflags = ["-C", "target-cpu=native", "-C", "llvm-args=-ffast-math", "-C", "opt-level=3", "-C", "llvm-args=-force-vector-width=16"]
+
+# rustflags = ["target-cpu=native"]
+
+# On my CPU the best performance is without "target-cpu=native" and with only:
+#    cargo run --release  
